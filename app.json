@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "jobsity-test",
+    "slug": "jobsity-test",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

@@ -5,6 +5,11 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "This app uses Face ID to unlock the app"
+      }
+    }
   }
 }

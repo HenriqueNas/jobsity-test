@@ -15,6 +15,7 @@ import {
 } from "@expo-google-fonts/poppins";
 
 import { Routes } from "./src/core/routes";
+import { AuthProvider } from "./src/services/context/auth";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -37,8 +38,10 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Routes />
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </AuthProvider>
   );
 }

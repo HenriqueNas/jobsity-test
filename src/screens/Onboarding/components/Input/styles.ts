@@ -14,7 +14,7 @@ export const InputContainer = styled.View`
   background: ${({ theme }) => theme.colors.shape_dark};
   border-radius: ${RFValue(16)}px;
 
-  border: 0.5px solid ${({ theme }) => theme.colors.background_secondary};
+  border: 1px solid ${({ theme }) => theme.colors.background_secondary};
 `;
 
 export const TextInput = styled.TextInput.attrs(({ theme }) => ({

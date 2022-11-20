@@ -1,7 +1,6 @@
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import styled from "styled-components/native";
 import { Feather } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { RFValue } from "react-native-responsive-fontsize";
+import styled from "styled-components/native";
 
 export const OnboardingContainer = styled.View`
   flex: 1;
@@ -42,7 +41,7 @@ export const Form = styled.View`
   padding: ${({ theme }) => theme.spacing.xxl * 2}px 0;
 `;
 
-export const SignInButton = styled(TouchableOpacity)`
+export const SignInButton = styled.TouchableOpacity`
   height: ${RFValue(50)}px;
   width: ${RFValue(50)}px;
   border-radius: ${RFValue(16)}px;

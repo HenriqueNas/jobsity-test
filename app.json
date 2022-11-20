@@ -3,12 +3,30 @@
     "name": "jobsity-test",
     "slug": "jobsity-test",
     "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/core/assets/images/icon.png",
     "assetBundlePatterns": [
       "**/*"
     ],
+    "splash": {
+      "image": "./src/core/assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#09090F"
+    },
     "ios": {
       "infoPlist": {
         "NSFaceIDUsageDescription": "This app uses Face ID to unlock the app"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/core/assets/images/adaptive-icon.png",
+        "backgroundColor": "#09090F"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d9986060-b489-4ef5-beb3-33eb7a5da89e"
       }
     }
   }

@@ -16,6 +16,7 @@ import {
 
 import { Routes } from "./src/core/routes";
 import { AuthProvider } from "./src/services/context/auth";
+import { StatusBar } from "expo-status-bar";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -40,6 +41,7 @@ export default function App() {
   return (
     <AuthProvider>
       <ThemeProvider theme={theme}>
+        <StatusBar translucent style="light" />
         <Routes />
       </ThemeProvider>
     </AuthProvider>

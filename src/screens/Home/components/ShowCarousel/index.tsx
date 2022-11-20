@@ -1,14 +1,14 @@
 import React from "react";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 import {
   CardImage,
-  ShowTitle,
-  ShowGenres,
   CarouselContainer,
   CarouselTitle,
+  ShowWrapper,
   GradientCover,
+  ShowGenres,
   ShowList,
+  ShowTitle,
 } from "./styles";
 
 export function ShowCarousel({ title, showModelList }: ShowCarouselProps) {
@@ -20,14 +20,14 @@ export function ShowCarousel({ title, showModelList }: ShowCarouselProps) {
         data={showModelList}
         keyExtractor={(show) => show.id.toString()}
         renderItem={({ item: show }) => (
-          <TouchableOpacity>
+          <ShowWrapper>
             <CardImage source={{ uri: show.image.medium }}>
               <GradientCover>
                 <ShowTitle>{show.name}</ShowTitle>
                 <ShowGenres>{show.genres.join(", ")}</ShowGenres>
               </GradientCover>
             </CardImage>
-          </TouchableOpacity>
+          </ShowWrapper>
         )}
       />
     </CarouselContainer>

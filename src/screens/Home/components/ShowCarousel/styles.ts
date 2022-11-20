@@ -36,6 +36,8 @@ export const ShowList = styled(
   },
 })``;
 
+export const ShowWrapper = styled.TouchableOpacity``;
+
 export const CardImage = styled.ImageBackground.attrs({
   resizeMode: "cover",
 })`

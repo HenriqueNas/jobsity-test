@@ -5,6 +5,7 @@ import { Feather } from "@expo/vector-icons";
 
 export const SearchContainer = styled.View`
   flex-direction: row;
+  align-items: center;
 
   padding: ${({ theme }) => theme.spacing.md}px;
   margin: ${({ theme }) => theme.spacing.md}px
@@ -13,12 +14,14 @@ export const SearchContainer = styled.View`
   background: ${({ theme }) => theme.colors.shape_dark};
   border-radius: ${RFValue(16)}px;
 
-  border: 0.5px solid ${({ theme }) => theme.colors.background_secondary};
+  border: 1px solid ${({ theme }) => theme.colors.background_secondary};
 `;
 
 export const SearchInput = styled.TextInput.attrs(({ theme }) => ({
   placeholderTextColor: theme.colors.secondary_on_background,
 }))`
+  flex: 1;
+
   color: ${({ theme }) => theme.colors.on_background};
   font-size: ${({ theme }) => theme.fonts.size.sm}px;
   font-family: ${({ theme }) => theme.fonts.family.medium};

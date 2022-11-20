@@ -8,12 +8,21 @@ import { Search } from "./components/Search";
 import { Filters } from "./components/Filters";
 import { ShowCarousel } from "./components/ShowCarousel";
 
-import { BoldTitle, Header, HomeContainer, Subtitle, Title } from "./styles";
+import {
+  BoldTitle,
+  Header,
+  HomeContainer,
+  Loading,
+  Subtitle,
+  Title,
+} from "./styles";
 import { useAuth } from "../../services/context/auth";
+import { ActivityIndicator } from "react-native";
 
 export function Home() {
   const { user } = useAuth();
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [shows, setShows] = useState<ShowModel[]>([]);
   const [featuredShows, setFeaturedShows] = useState<ShowModel[]>([]);
   const [mostWatchedShows, setMostWatchedShows] = useState<ShowModel[]>([]);
@@ -39,6 +48,7 @@ export function Home() {
       setFeaturedShows(chunkedShows[0]);
       setMostWatchedShows(chunkedShows[1]);
       setMoreShows(chunkedShows[2]);
+      setIsLoading(false);
     })();
   }, []);
 
@@ -52,13 +62,19 @@ export function Home() {
         <Subtitle>Let's watch something?</Subtitle>
       </Header>
 
-      <Search />
-      <Filters />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <Search />
+          <Filters />
 
-      <ShowCarousel title="Featured Series" showModelList={featuredShows} />
-      <ShowCarousel title="Most Watched" showModelList={mostWatchedShows} />
-      <ShowCarousel title="More Shows" showModelList={moreShows} />
-      <ShowCarousel showModelList={shows} />
+          <ShowCarousel title="Featured Series" showModelList={featuredShows} />
+          <ShowCarousel title="Most Watched" showModelList={mostWatchedShows} />
+          <ShowCarousel title="More Shows" showModelList={moreShows} />
+          <ShowCarousel showModelList={shows} />
+        </>
+      )}
     </HomeContainer>
   );
 }

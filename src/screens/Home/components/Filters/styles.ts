@@ -1,7 +1,6 @@
 import styled from "styled-components/native";
 import { Feather } from "@expo/vector-icons";
 import { RFValue } from "react-native-responsive-fontsize";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const FiltersContainer = styled.View`
   margin: ${({ theme }) => theme.spacing.sm}px
@@ -22,7 +21,7 @@ export const FiltersWrapper = styled.View`
   justify-content: space-between;
 `;
 
-export const Filter = styled(TouchableOpacity)`
+export const Filter = styled.TouchableOpacity`
   align-items: center;
 `;
 

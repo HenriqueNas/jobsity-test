@@ -4,6 +4,7 @@ export const HomeContainer = styled.ScrollView.attrs({
   showsVerticalScrollIndicator: false,
 })`
   flex: 1;
+  padding-top: ${({ theme }) => theme.spacing.md}px;
   background-color: ${({ theme }) => theme.colors.background_primary};
 `;
 
@@ -26,7 +27,14 @@ export const BoldTitle = styled.Text`
 `;
 
 export const Subtitle = styled.Text`
-  color: ${({ theme }) => theme.colors.on_background};
+  color: ${({ theme }) => theme.colors.secondary_on_background};
   font-size: ${({ theme }) => theme.fonts.size.sm}px;
   line-height: 24px;
+`;
+
+export const Loading = styled.ActivityIndicator.attrs(({ theme }) => ({
+  size: "large",
+  color: theme.colors.secondary_on_background,
+}))`
+  margin-top: 100px;
 `;

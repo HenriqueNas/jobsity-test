@@ -1,3 +1,5 @@
+import { RFValue } from "react-native-responsive-fontsize";
+
 type colors = typeof theme.colors;
 type fonts = typeof theme.fonts;
 
@@ -12,18 +14,32 @@ const theme = {
     shape_dark: "#17171D",
 
     on_background: "#FFFFFF",
-    on_background_secondary: "#A0A0A0",
+    secondary_on_background: "#A0A0A0",
 
     primary: "#FF725E",
     secondary: "#91A0E2",
   },
   fonts: {
-    primary: {
+    family: {
       regular: "Poppins_400Regular",
       medium: "Poppins_500Medium",
       semi_bold: "Poppins_600SemiBold",
       bold: "Poppins_700Bold",
     },
+    size: {
+      sm: 16,
+      md: 20,
+      lg: 24,
+      xl: 28,
+      xxl: 32,
+    },
+  },
+  spacing: {
+    sm: RFValue(8),
+    md: RFValue(16),
+    lg: RFValue(24),
+    xl: RFValue(32),
+    xxl: RFValue(40),
   },
 };
 

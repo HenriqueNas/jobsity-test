@@ -2,13 +2,11 @@ import React from "react";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { Octicons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
-import { Generic } from "../../modules/Generic";
-
-import { AppTabsNavigation } from "./routes";
 import { useTheme } from "styled-components";
-import { View } from "react-native";
+import { Profile } from "../../screens/Profile";
+import { AppTabsNavigation } from "./routes";
 import { HomeStackRoutes } from "./stacks/Home/home.routes";
 
 const { Navigator, Screen } = createBottomTabNavigator<AppTabsNavigation>();
@@ -19,69 +17,33 @@ export function AppTabsRoutes() {
   return (
     <Navigator
       initialRouteName="HomeStackRoutes"
-      // screenOptions={{
-      //   headerShown: false,
-      //   tabBarShowLabel: false,
-      //   tabBarStyle: {
-      //     position: "absolute",
-      //     elevation: 0,
-      //     backgroundColor: theme.colors.background_secondary,
-      //     height: 70,
-      //     marginHorizontal: 32,
-      //     marginBottom: 24,
-      //     borderRadius: 16,
-      //     paddingBottom: 0,
-      //     shadowColor: "#000",
-      //     shadowOpacity: 0.5,
-      //     shadowRadius: 10,
-      //     shadowOffset: {
-      //       width: 1,
-      //       height: 1,
-      //     },
-      //   },
-      //   tabBarInactiveTintColor: theme.colors.gray,
-      //   tabBarActiveTintColor: theme.colors.primary,
-      // }}
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: theme.colors.background_primary,
+          height: 90,
+          borderTopWidth: 0,
+        },
+        tabBarInactiveTintColor: theme.colors.secondary_on_background,
+        tabBarActiveTintColor: theme.colors.on_background,
+      }}
     >
-      <Screen
-        name="Profile"
-        component={Generic}
-        options={() => ({
-          tabBarIcon: ({ color, size }) => (
-            <Octicons name="person" color={color} size={size} />
-          ),
-        })}
-      />
       <Screen
         name="HomeStackRoutes"
         component={HomeStackRoutes}
         options={() => ({
-          tabBarIcon: ({ size }) => (
-            <View
-              style={{
-                backgroundColor: theme.colors.primary,
-                position: "relative",
-                padding: 16,
-                paddingHorizontal: 18,
-                borderRadius: 50,
-                top: -15,
-              }}
-            >
-              <Octicons
-                name="home"
-                color={theme.colors.background_secondary}
-                size={size}
-              />
-            </View>
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="home" color={color} size={size} />
           ),
         })}
       />
       <Screen
-        name="Configs"
-        component={Generic}
+        name="Profile"
+        component={Profile}
         options={() => ({
-          tabBarIcon: ({ color, size }) => (
-            <Octicons name="gear" color={color} size={size} />
+          tabBarIcon: ({ size, color }) => (
+            <Feather name="user" color={color} size={size} />
           ),
         })}
       />

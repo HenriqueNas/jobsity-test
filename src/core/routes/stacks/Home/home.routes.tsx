@@ -2,8 +2,8 @@ import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { HomeStackNavigation } from "./routes";
-import { Home } from "../../../../modules/Home";
-import { Show } from "../../../../modules/Show";
+import { Home } from "../../../../screens/Home";
+import { Show } from "../../../../screens/Show";
 
 const { Navigator, Screen } = createNativeStackNavigator<HomeStackNavigation>();
 

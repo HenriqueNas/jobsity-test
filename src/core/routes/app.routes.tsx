@@ -2,7 +2,7 @@ import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { Onboarding } from "../../modules/Onboarding";
+import { Onboarding } from "../../screens/Onboarding";
 import { AppStackParams } from "./routes";
 import { AppTabsRoutes } from "./tabs.routes";
 
@@ -17,7 +17,13 @@ export function AppStackRoutes() {
       }}
     >
       <Screen name="Onboarding" component={Onboarding} />
-      <Screen name="Tabs" component={AppTabsRoutes} />
+      <Screen
+        name="Tabs"
+        component={AppTabsRoutes}
+        options={{
+          gestureEnabled: false,
+        }}
+      />
     </Navigator>
   );
 }

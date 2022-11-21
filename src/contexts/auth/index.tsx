@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { setItem, getItem, removeItem } from "../../storage";
+import { setItem, getItem, removeItem } from "../../services/storage";
 
 const AuthContext = createContext<AuthContextInterface>(
   {} as AuthContextInterface

@@ -4,7 +4,7 @@ import { filters } from "./filters";
 
 import {
   FiltersContainer,
-  FiltersTitle,
+  Heading,
   FiltersWrapper,
   Filter,
   FilterIconWrapper,
@@ -19,7 +19,7 @@ export function Filters() {
 
   return (
     <FiltersContainer>
-      <FiltersTitle>Filters</FiltersTitle>
+      <Heading>Filters</Heading>
 
       <FiltersWrapper>
         {filters.map((filter) => (

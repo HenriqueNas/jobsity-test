@@ -1,0 +1,3 @@
+interface EpisodesCarouselProps {
+  episodesModelList: EpisodeModel[];
+}

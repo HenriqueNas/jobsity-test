@@ -16,24 +16,6 @@ export const Header = styled.View`
   width: 100%;
 `;
 
-export const Title = styled.Text`
-  font-family: ${(props) => props.theme.fonts.family.semi_bold};
-  font-size: ${({ theme }) => theme.fonts.size.xl}px;
-  color: ${({ theme }) => theme.colors.on_background};
-
-  line-height: 60px;
-`;
-
-export const Subtitle = styled.Text`
-  width: 80%;
-
-  font-family: ${(props) => props.theme.fonts.family.regular};
-  font-size: ${({ theme }) => theme.fonts.size.sm}px;
-  color: ${({ theme }) => theme.colors.secondary_on_background};
-
-  line-height: 24px;
-`;
-
 export const Form = styled.View`
   width: 100%;
   align-items: flex-end;

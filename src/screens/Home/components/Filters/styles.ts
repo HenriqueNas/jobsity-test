@@ -7,18 +7,18 @@ export const FiltersContainer = styled.View`
     ${({ theme }) => theme.spacing.xl}px;
 `;
 
-export const FiltersTitle = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.family.semi_bold};
-  font-size: ${({ theme }) => theme.fonts.size.lg}px;
-
-  color: ${({ theme }) => theme.colors.on_background};
-
-  margin-bottom: ${({ theme }) => theme.spacing.md}px;
-`;
-
 export const FiltersWrapper = styled.View`
   flex-direction: row;
   justify-content: space-between;
+`;
+
+export const Heading = styled.Text`
+  font-size: ${({ theme }) => theme.fonts.size.md}px;
+  font-family: ${({ theme }) => theme.fonts.family.regular};
+
+  color: ${({ theme }) => theme.colors.on_background};
+  line-height: 32px;
+  padding-bottom: ${({ theme }) => theme.spacing.sm}px;
 `;
 
 export const Filter = styled.TouchableOpacity`
@@ -33,7 +33,7 @@ export const FilterIconWrapper = styled.View`
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ theme }) => theme.colors.background_secondary};
+  background-color: ${({ theme }) => theme.colors.shape_dark};
   margin-bottom: ${({ theme }) => theme.spacing.sm}px;
 `;
 

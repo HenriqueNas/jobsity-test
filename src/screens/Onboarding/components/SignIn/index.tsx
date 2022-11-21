@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Alert } from "react-native";
 import { canUseLocalAuth, tryLocalAuth } from "../../../../services/local_auth";
 
-import { useAuth } from "../../../../services/context/auth";
+import { useAuth } from "../../../../contexts/auth";
 import { useAppNavigation } from "../../../../services/navigation";
 
 import { Input } from "../Input";
 
-import { Continue, Form, Header, Subtitle, Title } from "./styles";
+import { Continue, Form, Header } from "./styles";
+import { Subtitle, Title } from "../../../components/Text";
 
 export function SignIn() {
   const { navigate } = useAppNavigation();

@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuth } from "../../services/context/auth";
+import { useAuth } from "../../contexts/auth";
 
 import { Register } from "./components/Register";
 import { SignIn } from "./components/SignIn";

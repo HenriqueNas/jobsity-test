@@ -15,7 +15,7 @@ import {
 } from "@expo-google-fonts/poppins";
 
 import { Routes } from "./src/core/routes";
-import { AuthProvider } from "./src/services/context/auth";
+import { AuthProvider } from "./src//contexts/auth";
 import { StatusBar } from "expo-status-bar";
 
 SplashScreen.preventAutoHideAsync();

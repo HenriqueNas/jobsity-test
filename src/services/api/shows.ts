@@ -1,5 +1,5 @@
 import api from ".";
-import { ShowModel } from "../../models/show";
+import { ShowModel, ShowSearchResultModel } from "../../models/show";
 
 export async function getShows(): Promise<ShowModel[]> {
   try {
@@ -12,9 +12,12 @@ export async function getShows(): Promise<ShowModel[]> {
   }
 }
 
-export async function getShowById(id: number): Promise<ShowModel> {
+export async function getShowById(
+  id: number,
+  embed = "seasons"
+): Promise<ShowModel> {
   try {
-    const response = await api.get(`/shows/${id}`);
+    const response = await api.get(`/shows/${id}?embed=${embed}`);
     const show: ShowModel = response.data;
 
     return show;
@@ -25,10 +28,10 @@ export async function getShowById(id: number): Promise<ShowModel> {
 
 export async function searchShowByTherm(therm: string): Promise<ShowModel[]> {
   try {
-    const response = await api.get(`/shows?q=${therm}`);
-    const show: ShowModel[] = response.data;
+    const response = await api.get(`/search/shows?q=${therm}`);
+    const searchResult: ShowSearchResultModel[] = response.data;
 
-    return show;
+    return searchResult.map((result) => result.show);
   } catch (error) {
     throw new Error(error?.message);
   }

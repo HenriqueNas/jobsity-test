@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-import { useAuth } from "../../services/context/auth";
+import { useAuth } from "../../contexts/auth";
 import { useAppNavigation } from "../../services/navigation";
 
 export function Profile() {

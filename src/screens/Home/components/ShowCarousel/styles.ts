@@ -11,16 +11,6 @@ export const CarouselContainer = styled.View`
   margin: ${({ theme }) => theme.spacing.lg}px 0;
 `;
 
-export const CarouselTitle = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.family.regular};
-  font-size: ${({ theme }) => theme.fonts.size.xl}px;
-
-  color: ${({ theme }) => theme.colors.on_background};
-
-  margin: 0 ${({ theme }) => theme.spacing.xl}px;
-  margin-bottom: ${({ theme }) => theme.spacing.md}px;
-`;
-
 export const ShowList = styled(
   FlatList as new (props: FlatListProps<ShowModel>) => FlatList<ShowModel>
 ).attrs({
@@ -60,7 +50,7 @@ export const GradientCover = styled(LinearGradient).attrs({
   padding: ${({ theme }) => theme.spacing.md}px;
 `;
 
-export const ShowTitle = styled.Text.attrs({
+export const ShowName = styled.Text.attrs({
   numberOfLines: 1,
 })`
   font-family: ${({ theme }) => theme.fonts.family.regular};

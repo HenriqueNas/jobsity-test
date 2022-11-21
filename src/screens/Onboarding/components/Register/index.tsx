@@ -1,19 +1,12 @@
 import React, { useState } from "react";
 
-import { useAuth } from "../../../../services/context/auth";
+import { useAuth } from "../../../../contexts/auth";
 import { useAppNavigation } from "../../../../services/navigation";
+import { Title, Subtitle } from "../../../components/Text";
 
 import { Input } from "../Input";
 
-import {
-  Header,
-  Title,
-  Subtitle,
-  Form,
-  SignInButton,
-  SignInIcon,
-  Continue,
-} from "./styles";
+import { Header, Form, SignInButton, SignInIcon, Continue } from "./styles";
 
 export function Register() {
   const { navigate } = useAppNavigation();

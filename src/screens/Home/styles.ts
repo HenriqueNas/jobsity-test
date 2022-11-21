@@ -15,21 +15,11 @@ export const Header = styled.View`
   margin: 0 ${({ theme }) => theme.spacing.xl}px;
 `;
 
-export const Title = styled.Text`
+export const Heading = styled.Text`
   color: ${({ theme }) => theme.colors.on_background};
   font-size: ${({ theme }) => theme.fonts.size.xxl}px;
   font-family: ${({ theme }) => theme.fonts.family.regular};
   line-height: 32px;
-`;
-
-export const BoldTitle = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.family.bold};
-`;
-
-export const Subtitle = styled.Text`
-  color: ${({ theme }) => theme.colors.secondary_on_background};
-  font-size: ${({ theme }) => theme.fonts.size.sm}px;
-  line-height: 24px;
 `;
 
 export const Loading = styled.ActivityIndicator.attrs(({ theme }) => ({

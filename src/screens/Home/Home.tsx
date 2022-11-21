@@ -4,20 +4,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { ShowModel } from "../../models/show";
 import { getShows } from "../../services/api/shows";
 
-import { Search } from "./components/Search";
 import { Filters } from "./components/Filters";
+import { Search } from "./components/Search";
 import { ShowCarousel } from "./components/ShowCarousel";
 
-import {
-  BoldTitle,
-  Header,
-  HomeContainer,
-  Loading,
-  Subtitle,
-  Title,
-} from "./styles";
-import { useAuth } from "../../services/context/auth";
-import { ActivityIndicator } from "react-native";
+import { useAuth } from "../../contexts/auth";
+import { Header, HomeContainer, Loading, Heading } from "./styles";
+import { BoldTitle, Subtitle } from "../components/Text";
+import { chunkShowList } from "../../utils/show";
 
 export function Home() {
   const { user } = useAuth();
@@ -28,15 +22,7 @@ export function Home() {
   const [mostWatchedShows, setMostWatchedShows] = useState<ShowModel[]>([]);
   const [moreShows, setMoreShows] = useState<ShowModel[]>([]);
 
-  function chunkShowList(shows: ShowModel[], chunkSize: number) {
-    var results: ShowModel[][] = [];
-
-    while (shows.length) {
-      results.push(shows.splice(0, chunkSize));
-    }
-
-    return results;
-  }
+  const [searchedShows, setSearchedShows] = useState<ShowModel[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -56,9 +42,9 @@ export function Home() {
     <HomeContainer>
       <SafeAreaView />
       <Header>
-        <Title>
+        <Heading>
           <BoldTitle>Hey</BoldTitle> {!!user ? user.name : "You"}!
-        </Title>
+        </Heading>
         <Subtitle>Let's watch something?</Subtitle>
       </Header>
 
@@ -66,13 +52,25 @@ export function Home() {
         <Loading />
       ) : (
         <>
-          <Search />
+          <Search setSearchShow={setSearchedShows} />
           <Filters />
 
-          <ShowCarousel title="Featured Series" showModelList={featuredShows} />
-          <ShowCarousel title="Most Watched" showModelList={mostWatchedShows} />
-          <ShowCarousel title="More Shows" showModelList={moreShows} />
-          <ShowCarousel showModelList={shows} />
+          {searchedShows.length > 0 ? (
+            <ShowCarousel title="Your Search" showModelList={searchedShows} />
+          ) : (
+            <>
+              <ShowCarousel
+                title="Featured Series"
+                showModelList={featuredShows}
+              />
+              <ShowCarousel
+                title="Most Watched"
+                showModelList={mostWatchedShows}
+              />
+              <ShowCarousel title="More Shows" showModelList={moreShows} />
+              <ShowCarousel showModelList={shows} />
+            </>
+          )}
         </>
       )}
     </HomeContainer>
